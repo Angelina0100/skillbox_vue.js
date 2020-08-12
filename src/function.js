@@ -1,3 +1,3 @@
-const showMessage = function (elem) { alert(elem); };
+const showMessage = function (param) { alert(param); };
 
-export default showMessage(elem);
+export default showMessage;
