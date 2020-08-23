@@ -20,6 +20,36 @@ export default [
     image: '/img/sonyvaiolaptop.jpg',
   },
   {
+    title: 'HTC Vive',
+    price: '69690',
+    image: '/img/htcvive.jpg',
+  },
+  {
+    title: 'Oculus Rift',
+    price: '61690',
+    image: '/img/oculusrift.jpg',
+  },
+  {
+    title: 'Oculus Rift Touch',
+    price: '51690',
+    image: '/img/oculusrifttouch.jpg',
+  },
+  {
+    title: 'Arizona Sunshine',
+    price: '3690',
+    image: '/img/arizonasunshine.jpg',
+  },
+  {
+    title: 'Doom3 BFG Edition',
+    price: '5190',
+    image: '/img/doom3.jpg',
+  },
+  {
+    title: 'WWE',
+    price: '2190',
+    image: '/img/wwe.jpg',
+  },
+  {
     title: 'Радионяня Motorola MBP16',
     price: '3690',
     image: '/img/radio.jpg',
