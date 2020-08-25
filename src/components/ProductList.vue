@@ -3,6 +3,7 @@
     <ProductItem
       v-for="(product, index) in products"
       :key="index"
+      :product="product"
     />
   </ul>
 </template>
@@ -12,6 +13,11 @@ import ProductItem from './ProductItem.vue';
 
 export default {
   components: { ProductItem },
-  props: ['products'],
+  props: {
+    products: {
+      type: Array,
+      required: true,
+    },
+  },
 };
 </script>
