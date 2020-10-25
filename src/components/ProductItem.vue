@@ -26,11 +26,10 @@
       <li class="colors__item">
         <label class="colors__label">
           <input
+            v-model="color"
             class="colors__radio sr-only"
             type="radio"
-            name="color-1"
             value="#73B6EA"
-            checked=""
           >
           <span
             class="colors__value"
@@ -41,9 +40,9 @@
       <li class="colors__item">
         <label class="colors__label">
           <input
+            v-model="color"
             class="colors__radio sr-only"
             type="radio"
-            name="color-1"
             value="#8BE000"
           >
           <span
@@ -55,9 +54,9 @@
       <li class="colors__item">
         <label class="colors__label">
           <input
+            v-model="color"
             class="colors__radio sr-only"
             type="radio"
-            name="color-1"
             value="#222"
           >
           <span
@@ -78,6 +77,11 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  data() {
+    return {
+      color: '#73B6EA',
+    };
   },
 };
 </script>

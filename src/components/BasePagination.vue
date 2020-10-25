@@ -80,10 +80,10 @@ export default {
       this.$emit('paginate', page);
     },
     prev() {
-      return this.page--;
+      this.page -= 1;
     },
     next() {
-      return this.page++;
+      this.page += 1;
     },
   },
 };
