@@ -308,7 +308,7 @@ export default {
       this.v = value;
     },
   },
-  method: {
+  methods: {
     submit() {
       this.$emit('update:priceFrom', this.currentPriceFrom);
       this.$emit('update:priceTo', this.currentPriceTo);

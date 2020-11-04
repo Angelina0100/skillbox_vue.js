@@ -5,8 +5,8 @@
         href="#"
         class="pagination__link pagination__link--arrow"
         aria-label="Предыдущая страница"
-        :class="{'pagination__link--disabled': page === 0}"
-        @click.prevent="prev"
+        :class="{'pagination__link--disabled': page === 1}"
+        @click.prevent="paginate(page - 1)"
       >
         <svg
           width="8"
@@ -36,7 +36,8 @@
         class="pagination__link pagination__link--arrow"
         href="#"
         aria-label="Следующая страница"
-        @click.prevent="next"
+        :class="{'pagination__link--disabled': page === pages}"
+        @click.prevent="paginate(page + 1)"
       >
         <svg
           width="8"
@@ -78,12 +79,6 @@ export default {
   methods: {
     paginate(page) {
       this.$emit('paginate', page);
-    },
-    prev() {
-      this.page -= 1;
-    },
-    next() {
-      this.page += 1;
     },
   },
 };
