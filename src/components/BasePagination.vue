@@ -6,7 +6,7 @@
         class="pagination__link pagination__link--arrow"
         aria-label="Предыдущая страница"
         :class="{'pagination__link--disabled': page === 1}"
-        @click.prevent="paginate(page - 1)"
+        @click.prevent="prev()"
       >
         <svg
           width="8"
@@ -33,11 +33,12 @@
     </li>
     <li class="pagination__item">
       <a
+        v-if="page >= 1"
         class="pagination__link pagination__link--arrow"
         href="#"
         aria-label="Следующая страница"
         :class="{'pagination__link--disabled': page === pages}"
-        @click.prevent="paginate(page + 1)"
+        @click.prevent="next()"
       >
         <svg
           width="8"
@@ -79,6 +80,22 @@ export default {
   methods: {
     paginate(page) {
       this.$emit('paginate', page);
+    },
+
+    prev() {
+      if (this.page === 1) {
+        return;
+      }
+      this.page -= 1;
+      this.$emit('paginate', this.page);
+    },
+
+    next() {
+      if (this.page === this.pages()) {
+        return;
+      }
+      this.page += 1;
+      this.$emit('paginate', this.page);
     },
   },
 };
