@@ -60,22 +60,27 @@
           Цвет
         </legend>
         <ul class="colors">
-          <li class="colors__item">
+          <li
+            v-for="color in colors"
+            :key="color.id"
+            class="colors__item"
+          >
             <label class="colors__label">
               <input
+                v-model="currentColor"
                 class="colors__radio sr-only"
                 type="radio"
                 name="color"
-                value="#73B6EA"
+                :value="color.code"
                 checked=""
               >
               <span
                 class="colors__value"
-                style="background-color: #73B6EA;"
+                :style="{ backgroundColor: color.code }"
               />
             </label>
           </li>
-          <li class="colors__item">
+          <!--<li class="colors__item">
             <label class="colors__label">
               <input
                 class="colors__radio sr-only"
@@ -153,7 +158,7 @@
                 class="colors__value"
                 style="background-color: #000;"
               /></label>
-          </li>
+          </li>-->
         </ul>
       </fieldset>
 
@@ -269,6 +274,7 @@
 
 <script>
 import categories from '../data/categories';
+import colors from '../data/colors';
 
 export default {
   props: {
@@ -284,17 +290,25 @@ export default {
       type: Number,
       required: true,
     },
+    colorProduct: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
       currentPriceFrom: 0,
       currentPriceTo: 0,
       currentCategoryId: 0,
+      currentColor: '#73B6EA',
     };
   },
   computed: {
     categories() {
       return categories;
+    },
+    colors() {
+      return colors;
     },
   },
   watch: {
@@ -307,17 +321,22 @@ export default {
     categoryId(value) {
       this.v = value;
     },
+    colorProduct(value) {
+      this.val = value;
+    },
   },
   methods: {
     submit() {
       this.$emit('update:priceFrom', this.currentPriceFrom);
       this.$emit('update:priceTo', this.currentPriceTo);
       this.$emit('update:categoryId', this.currentCategoryId);
+      this.$emit('update:color', this.currentColor);
     },
     reset() {
       this.$emit('update:priceFrom', 0);
       this.$emit('update:priceTo', 0);
       this.$emit('update:categoryId', 0);
+      this.$emit('update:currentColor', '#73B6EA');
     },
   },
 };
