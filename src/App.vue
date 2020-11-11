@@ -64,11 +64,11 @@ export default {
       }
 
       if (this.filterCategoryId) {
-        filteredProducts = filteredProducts.filter((product) => product.categoryId > this.filterGategoryId);
+        filteredProducts = filteredProducts.filter((product) => product.categoryId === this.filterCategoryId);
       }
 
       if (this.filterColorProduct) {
-        filteredProducts = filteredProducts.filter((product) => product.color === this.color);
+        filteredProducts = filteredProducts.filter((product) => product.colors.code === this.color);
       }
 
       return filteredProducts;

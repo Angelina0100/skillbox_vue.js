@@ -319,10 +319,10 @@ export default {
       this.currentPriceTo = value;
     },
     categoryId(value) {
-      this.v = value;
+      this.currentCategoryId = value;
     },
     colorProduct(value) {
-      this.val = value;
+      this.currentColor = value;
     },
   },
   methods: {
@@ -330,13 +330,13 @@ export default {
       this.$emit('update:priceFrom', this.currentPriceFrom);
       this.$emit('update:priceTo', this.currentPriceTo);
       this.$emit('update:categoryId', this.currentCategoryId);
-      this.$emit('update:color', this.currentColor);
+      this.$emit('update:colorProduct', this.currentColor);
     },
     reset() {
       this.$emit('update:priceFrom', 0);
       this.$emit('update:priceTo', 0);
       this.$emit('update:categoryId', 0);
-      this.$emit('update:currentColor', '#73B6EA');
+      this.$emit('update:colorProduct', '#73B6EA');
     },
   },
 };
