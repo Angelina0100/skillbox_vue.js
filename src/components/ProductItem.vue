@@ -5,6 +5,7 @@
     <a
       class="catalog__pic"
       href="#"
+      @click.prevent="$emit('gotoPage', 'product', {id: product.id})"
     >
       <img
         :src="product.image"
