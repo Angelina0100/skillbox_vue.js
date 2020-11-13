@@ -45,7 +45,7 @@ export default {
       filterPriceFrom: 0,
       filterPriceTo: 0,
       filterCategoryId: 0,
-      filterColorProduct: '#73B6EA',
+      filterColorProduct: '',
 
       page: 1,
       productsPerPage: 3,
@@ -68,7 +68,7 @@ export default {
       }
 
       if (this.filterColorProduct) {
-        filteredProducts = filteredProducts.filter((product) => product.colors.code === this.color);
+        filteredProducts = filteredProducts.filter((product) => product.colors.some((color) => color.code === this.filterColorProduct));
       }
 
       return filteredProducts;
