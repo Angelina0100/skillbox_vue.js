@@ -300,7 +300,7 @@ export default {
       currentPriceFrom: 0,
       currentPriceTo: 0,
       currentCategoryId: 0,
-      currentColor: '#73B6EA',
+      currentColor: '',
     };
   },
   computed: {
@@ -336,7 +336,7 @@ export default {
       this.$emit('update:priceFrom', 0);
       this.$emit('update:priceTo', 0);
       this.$emit('update:categoryId', 0);
-      this.$emit('update:colorProduct', '#73B6EA');
+      this.$emit('update:colorProduct', '');
     },
   },
 };

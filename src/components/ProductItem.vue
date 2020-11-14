@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-      colorCurrent: 'none',
+      colorCurrent: '',
     };
   },
 };

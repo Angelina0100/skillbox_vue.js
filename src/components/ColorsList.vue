@@ -22,23 +22,23 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      colorsArray: {
-        type: Array,
-        required: true,
-      },
-      currentColor: {
-        type: String,
-        required: true,
-      }
+export default {
+  props: {
+    colorsArray: {
+      type: Array,
+      required: true,
     },
+    currentColor: {
+      type: String,
+      required: true,
+    },
+  },
 
-    data() {
-      return {
-        colors: [],
-        colorCurrent: '',
-      }
-    },
-  }
+  data() {
+    return {
+      colors: [],
+      colorCurrent: '',
+    };
+  },
+};
 </script>
