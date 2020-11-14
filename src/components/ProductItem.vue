@@ -24,7 +24,9 @@
 
     <ul class="colors colors--black">
       <ColorsList
-
+        v-for="color in product.colors"
+        :key="color.id"
+        :colors-array="product.colors"
       />
       <!--<li
         v-for="color in product.colors"

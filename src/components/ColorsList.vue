@@ -8,11 +8,11 @@
           v-model="colorCurrent"
           class="colors__radio sr-only"
           type="radio"
-          :value="color.code"
+          :value="colorsArray.code"
         >
         <span
           class="colors__value"
-          :style=" { backgroundColor: color.code }"
+          :style=" { backgroundColor: colorsArray.code }"
         />
       </label>
     </li>
