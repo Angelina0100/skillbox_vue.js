@@ -41,34 +41,6 @@
           />
         </label>
       </li>
-      <!--<li class="colors__item">
-        <label class="colors__label">
-          <input
-            v-model="color"
-            class="colors__radio sr-only"
-            type="radio"
-            value="#8BE000"
-          >
-          <span
-            class="colors__value"
-            style="background-color: #8BE000;"
-          />
-        </label>
-      </li>
-      <li class="colors__item">
-        <label class="colors__label">
-          <input
-            v-model="color"
-            class="colors__radio sr-only"
-            type="radio"
-            value="#222"
-          >
-          <span
-            class="colors__value"
-            style="background-color: #222;"
-          />
-        </label>
-      </li>-->
     </ul>
   </li>
 </template>
