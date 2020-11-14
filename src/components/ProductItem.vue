@@ -23,7 +23,10 @@
     </span>
 
     <ul class="colors colors--black">
-      <li
+      <ColorsList
+
+      />
+      <!--<li
         v-for="color in product.colors"
         :key="color.id"
         class="colors__item"
@@ -40,14 +43,16 @@
             :style=" { backgroundColor: color.code }"
           />
         </label>
-      </li>
+      </li>-->
     </ul>
   </li>
 </template>
 
 <script>
+import ColorsList from './ColorsList.vue';
 
 export default {
+  components: { ColorsList },
   props: {
     product: {
       type: Object,

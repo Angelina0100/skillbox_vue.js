@@ -60,7 +60,10 @@
           Цвет
         </legend>
         <ul class="colors">
-          <li
+          <ColorsList
+
+          />
+          <!--<li
             v-for="color in colors"
             :key="color.id"
             class="colors__item"
@@ -79,85 +82,6 @@
                 :style="{ backgroundColor: color.code }"
               />
             </label>
-          </li>
-          <!--<li class="colors__item">
-            <label class="colors__label">
-              <input
-                class="colors__radio sr-only"
-                type="radio"
-                name="color"
-                value="#FFBE15"
-              >
-              <span
-                class="colors__value"
-                style="background-color: #FFBE15;"
-              />
-            </label>
-          </li>
-          <li class="colors__item">
-            <label class="colors__label">
-              <input
-                class="colors__radio sr-only"
-                type="radio"
-                name="color"
-                value="#939393"
-              >
-              <span
-                class="colors__value"
-                style="background-color: #939393;"
-              /></label>
-          </li>
-          <li class="colors__item">
-            <label class="colors__label">
-              <input
-                class="colors__radio sr-only"
-                type="radio"
-                name="color"
-                value="#8BE000"
-              >
-              <span
-                class="colors__value"
-                style="background-color: #8BE000;"
-              /></label>
-          </li>
-          <li class="colors__item">
-            <label class="colors__label">
-              <input
-                class="colors__radio sr-only"
-                type="radio"
-                name="color"
-                value="#FF6B00"
-              >
-              <span
-                class="colors__value"
-                style="background-color: #FF6B00;"
-              /></label>
-          </li>
-          <li class="colors__item">
-            <label class="colors__label">
-              <input
-                class="colors__radio sr-only"
-                type="radio"
-                name="color"
-                value="#FFF"
-              >
-              <span
-                class="colors__value"
-                style="background-color: #FFF;"
-              /></label>
-          </li>
-          <li class="colors__item">
-            <label class="colors__label">
-              <input
-                class="colors__radio sr-only"
-                type="radio"
-                name="color"
-                value="#000"
-              >
-              <span
-                class="colors__value"
-                style="background-color: #000;"
-              /></label>
           </li>-->
         </ul>
       </fieldset>
@@ -275,8 +199,10 @@
 <script>
 import categories from '../data/categories';
 import colors from '../data/colors';
+import ColorsList from './ColorsList.vue';
 
 export default {
+  components: { ColorsList },
   props: {
     priceFrom: {
       type: Number,

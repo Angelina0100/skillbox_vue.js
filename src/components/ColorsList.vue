@@ -1,8 +1,6 @@
 <template>
   <ul class="colors colors--black">
     <li
-      v-for="color in product.colors"
-      :key="color.id"
       class="colors__item"
     >
       <label class="colors__label">
