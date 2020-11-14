@@ -61,7 +61,9 @@
         </legend>
         <ul class="colors">
           <ColorsList
-
+            v-for="color in colors"
+            :key="color.id"
+            :colors-array="colors"
           />
           <!--<li
             v-for="color in colors"

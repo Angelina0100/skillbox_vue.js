@@ -61,10 +61,5 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      colorCurrent: '',
-    };
-  },
 };
 </script>
