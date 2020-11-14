@@ -1,5 +1,4 @@
 <template>
-  <ul class="colors colors--black">
     <li
       class="colors__item"
     >
@@ -16,7 +15,6 @@
         />
       </label>
     </li>
-  </ul>
 </template>
 
 <script>
