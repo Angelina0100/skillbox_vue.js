@@ -59,13 +59,14 @@
         <legend class="form__legend">
           Цвет
         </legend>
-        <ul class="colors">
-          <ColorsList
-            v-for="color in colors"
-            :key="color.id"
-            :colors-array="colors"
-          />
-          <!--<li
+
+        <ColorsList
+          :colors="colors"
+          :current-color.sync="currentColor"
+          @updateColor="newColor"
+        />
+        <!--<ul class="colors">
+          <li
             v-for="color in colors"
             :key="color.id"
             class="colors__item"
@@ -84,8 +85,8 @@
                 :style="{ backgroundColor: color.code }"
               />
             </label>
-          </li>-->
-        </ul>
+          </li>
+        </ul>-->
       </fieldset>
 
       <fieldset class="form__block">
@@ -184,6 +185,7 @@
       <button
         class="filter__submit button button--primery"
         type="submit"
+        @click.prevent="submit"
       >
         Применить
       </button>
@@ -228,6 +230,43 @@ export default {
       currentPriceFrom: 0,
       currentPriceTo: 0,
       currentCategoryId: 0,
+      colorsArray: [
+        {
+          id: 1,
+          title: 'Голубой',
+          code: '#73B6EA',
+        },
+        {
+          id: 2,
+          title: 'Желтый',
+          code: '#FFBE15',
+        },
+        {
+          id: 3,
+          title: 'Серый',
+          code: '#939393',
+        },
+        {
+          id: 4,
+          title: 'Зеленый',
+          code: '#8BE000',
+        },
+        {
+          id: 5,
+          title: 'Оранжевый',
+          code: '#FF6B00',
+        },
+        {
+          id: 6,
+          title: 'Белый',
+          code: '#FFF',
+        },
+        {
+          id: 7,
+          title: 'Черный',
+          code: '#000',
+        },
+      ],
       currentColor: '',
     };
   },
@@ -265,6 +304,9 @@ export default {
       this.$emit('update:priceTo', 0);
       this.$emit('update:categoryId', 0);
       this.$emit('update:colorProduct', '');
+    },
+    newColor(variable) {
+      this.currentColor = variable;
     },
   },
 };

@@ -1,26 +1,32 @@
 <template>
+  <ul class="colors colors--black">
     <li
+      v-for="color in colors"
+      :key="color.id"
       class="colors__item"
     >
       <label class="colors__label">
         <input
-          v-model="colorCurrent"
+          v-model="currentColor"
           class="colors__radio sr-only"
           type="radio"
-          :value="colorsArray.code"
+          :value="color.code"
+          @click="sendColor"
         >
         <span
           class="colors__value"
-          :style=" { backgroundColor: colorsArray.code }"
+          :style=" { backgroundColor: color.code }"
         />
       </label>
     </li>
+  </ul>
 </template>
 
 <script>
+
 export default {
   props: {
-    colorsArray: {
+    colors: {
       type: Array,
       required: true,
     },
@@ -30,10 +36,10 @@ export default {
     },
   },
 
-  data() {
-    return {
-      colorCurrent: '',
-    };
+  methods: {
+    sendColor() {
+      this.$emit('update:currentColor', this.currentColor);
+    },
   },
 };
 </script>

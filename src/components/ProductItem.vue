@@ -21,14 +21,14 @@
     <span class="catalog__price">
       {{ product.price }}
     </span>
-
-    <ul class="colors colors--black">
-      <ColorsList
-        v-for="color in product.colors"
-        :key="color.id"
-        :colors-array="product.colors"
-      />
-      <!--<li
+    <ColorsList
+      :colors="product.colors"
+      :current-color.sync="product.colors.code"
+      @updateColor="newColor"
+      class="colors--black"
+    />
+    <!--<ul class="colors colors--black">
+      <li
         v-for="color in product.colors"
         :key="color.id"
         class="colors__item"
@@ -45,8 +45,8 @@
             :style=" { backgroundColor: color.code }"
           />
         </label>
-      </li>-->
-    </ul>
+      </li>
+    </ul>-->
   </li>
 </template>
 
@@ -59,6 +59,17 @@ export default {
     product: {
       type: Object,
       required: true,
+    },
+  },
+  data() {
+    return {
+      currentColor: '',
+    };
+  },
+
+  methods: {
+    newColor(variable) {
+      this.currentColor = variable;
     },
   },
 };
