@@ -63,7 +63,6 @@
         <ColorsList
           :colors="colors"
           :current-color.sync="currentColor"
-          @updateColor="newColor"
         />
         <!--<ul class="colors">
           <li
@@ -304,9 +303,6 @@ export default {
       this.$emit('update:priceTo', 0);
       this.$emit('update:categoryId', 0);
       this.$emit('update:colorProduct', '');
-    },
-    newColor(variable) {
-      this.currentColor = variable;
     },
   },
 };

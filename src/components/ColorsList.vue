@@ -1,5 +1,5 @@
 <template>
-  <ul class="colors colors--black">
+  <ul class="colors">
     <li
       v-for="color in colors"
       :key="color.id"
@@ -7,11 +7,10 @@
     >
       <label class="colors__label">
         <input
-          v-model="currentColor"
+          v-model="localColor"
           class="colors__radio sr-only"
           type="radio"
           :value="color.code"
-          @click="sendColor"
         >
         <span
           class="colors__value"
@@ -36,9 +35,15 @@ export default {
     },
   },
 
-  methods: {
-    sendColor() {
-      this.$emit('update:currentColor', this.currentColor);
+  data() {
+    return {
+      localColor: this.currentColor,
+    };
+  },
+
+  watch: {
+    localColor(v) {
+      this.$emit('update:currentColor', v);
     },
   },
 };

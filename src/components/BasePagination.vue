@@ -91,7 +91,7 @@ export default {
     },
 
     next() {
-      if (this.page === this.pages()) {
+      if (this.page === this.pages) {
         return;
       }
       this.page += 1;
