@@ -5,7 +5,7 @@
     <a
       class="catalog__pic"
       href="#"
-      @click.prevent="gotoPage('gotoPage', 'product', {id: product.id})"
+      @click.prevent="gotoPage('product', {id: product.id})"
     >
       <img
         :src="product.image"
@@ -24,29 +24,9 @@
     </span>
     <ColorsList
       :colors="product.colors"
-      :current-color.sync="product.colors.code"
+      :current-color.sync="currentColor"
       class="colors--black"
     />
-    <!--<ul class="colors colors--black">
-      <li
-        v-for="color in product.colors"
-        :key="color.id"
-        class="colors__item"
-      >
-        <label class="colors__label">
-          <input
-            v-model="colorCurrent"
-            class="colors__radio sr-only"
-            type="radio"
-            :value="color.code"
-          >
-          <span
-            class="colors__value"
-            :style=" { backgroundColor: color.code }"
-          />
-        </label>
-      </li>
-    </ul>-->
   </li>
 </template>
 
@@ -68,7 +48,7 @@ export default {
   },
   data() {
     return {
-      currentColor: '',
+      currentColor: this.product.colors[0].code,
     };
   },
 

@@ -1,6 +1,6 @@
 <template>
   <component
-    :is="currentPageComponent"
+    :is="currentPage"
     :page-params="currentPageParams"
   />
 </template>
@@ -20,7 +20,7 @@ export default {
   components: { MainPage, ProductPage, NotFoundPage },
   data() {
     return {
-      currentPage: 'main',
+      currentPage: 'mainPage',
       currentPageParams: {},
     };
   },
@@ -36,7 +36,7 @@ export default {
 
   methods: {
     gotoPage(pageName, pageParams) {
-      this.curentPage = pageName;
+      this.currentPage = pageName;
       this.pageParams = pageParams || {};
     },
   },

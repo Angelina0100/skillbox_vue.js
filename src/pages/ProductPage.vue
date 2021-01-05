@@ -6,6 +6,7 @@
           <a
             class="breadcrumbs__link"
             href="index.html"
+            @click.prevent="gotoPage('main')"
           >
             Каталог
           </a>
@@ -41,64 +42,6 @@
             :alt="product.title"
           >
         </div>
-        <ul class="pics__list">
-          <li class="pics__item">
-            <a
-              href=""
-              class="pics__link pics__link--current"
-            >
-              <img
-                width="98"
-                height="98"
-                src="img/phone-square-1.jpg"
-                srcset="img/phone-square-1@2x.jpg 2x"
-                alt="Название товара"
-              >
-            </a>
-          </li>
-          <li class="pics__item">
-            <a
-              href=""
-              class="pics__link"
-            >
-              <img
-                width="98"
-                height="98"
-                src="img/phone-square-2.jpg"
-                srcset="img/phone-square-2@2x.jpg 2x"
-                alt="Название товара"
-              >
-            </a>
-          </li>
-          <li class="pics__item">
-            <a
-              href=""
-              class="pics__link"
-            >
-              <img
-                width="98"
-                height="98"
-                src="img/phone-square-3.jpg"
-                srcset="img/phone-square-3@2x.jpg 2x"
-                alt="Название товара"
-              >
-            </a>
-          </li>
-          <li class="pics__item">
-            <a
-              class="pics__link"
-              href="#"
-            >
-              <img
-                width="98"
-                height="98"
-                src="img/phone-square-4.jpg"
-                srcset="img/phone-square-4@2x.jpg 2x"
-                alt="Название товара"
-              >
-            </a>
-          </li>
-        </ul>
       </div>
 
       <div class="item__info">
@@ -330,6 +273,7 @@ import gotoPage from '@/helpers/gotoPage';
 import numberFormat from '@/helpers/numberFormat';
 
 export default {
+
   filters: {
     numberFormat,
   },
