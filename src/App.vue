@@ -1,6 +1,6 @@
 <template>
   <component
-    :is="currentPage"
+    :is="currentPageComponent"
     :page-params="currentPageParams"
   />
 </template>
@@ -10,7 +10,6 @@ import MainPage from './pages/MainPage.vue';
 import ProductPage from './pages/ProductPage.vue';
 import NotFoundPage from './pages/NotFoundPage.vue';
 import eventBus from './eventBus';
-import products from './data/products';
 
 const routes = {
   main: 'MainPage',
@@ -19,11 +18,12 @@ const routes = {
 
 export default {
   components: {
-    MainPage, ProductPage, NotFoundPage, products,
+    MainPage, ProductPage, NotFoundPage,
   },
+
   data() {
     return {
-      currentPage: 'mainPage',
+      currentPage: 'main',
       currentPageParams: {},
     };
   },

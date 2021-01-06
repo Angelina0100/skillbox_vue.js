@@ -40,12 +40,7 @@ export default {
   filters: {
     numberFormat,
   },
-  props: {
-    product: {
-      type: Object,
-      required: true,
-    },
-  },
+  props: ['product'],
   data() {
     return {
       currentColor: this.product.colors[0].code,

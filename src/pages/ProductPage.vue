@@ -5,7 +5,7 @@
         <li class="breadcrumbs__item">
           <a
             class="breadcrumbs__link"
-            href="index.html"
+            href="#"
             @click.prevent="gotoPage('main')"
           >
             Каталог
